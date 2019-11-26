@@ -1,5 +1,7 @@
 # Developer-Profile-Generator
 
+![2019-11-25](https://user-images.githubusercontent.com/53213039/69597929-75a16080-0fbc-11ea-9a9e-a11e8fc9d826.png)
+
 Create a command-line application that dynamically generates a PDF profile from a GitHub username. The application will be invoked with the following command:
 "node index.js"
 The user will be prompted for a favorite color, which will be used as the background color for cards.
