@@ -83,7 +83,7 @@ writeFileAsync("index.html", generateHTML);
 
 //the page.goto path should be manually set to where the HTML you want to convert to .pdf lives
 
-  await page.goto("file://C:/Users/basso/OneDrive/Desktop/code/cloned class stuff/09-NodeJS/02-Homework/Node-PDF-profile-maker/Develop/index.html");
+  await page.goto("C:\Users\tujun\Desktop\Developer-Profile-Generator\Developer-Profile-Generator");
   await page.emulateMedia("screen");
   await page.pdf({
     path: `${username}.pdf`,
