@@ -75,26 +75,24 @@ writeFileAsync("index.html", generateHTML);
  init();
 
  async function makePdf(username){
+  // console.log(username);
+    try {
+   
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
 
-  try {
- 
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-
-//the page.goto path should be manually set to where the HTML you want to convert to .pdf lives
-
-  await page.goto("C:\Users\tujun\Desktop\Developer-Profile-Generator\Developer-Profile-Generator");
-  await page.emulateMedia("screen");
-  await page.pdf({
-    path: `${username}.pdf`,
-    format: "A4",
-    printBackground:true,
-    landscape:true
-  });
-  
-  console.log("done");
-  await browser.exit();
-} catch (error) {
-console.log("our error");
-}
-}
+  await page.goto('file://c:/Users/tujun/Desktop/Developer-Profile-Generator/Developer-Profile-Generator/index.html');
+    await page.emulateMedia("screen");
+    await page.pdf({ 
+      path: `${username}.pdf`,
+      format: "A4",
+      printBackground: true,
+      landscape: false
+    });
+    
+    console.log("Succesfully generated PDF");
+    await browser.close();
+  } catch (error) {
+  console.log("Error generating PDF");
+  }
+  }
